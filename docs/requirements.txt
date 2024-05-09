@@ -1,3 +1,4 @@
+bash_kernel
 bed_reader
 click
 cyvcf2

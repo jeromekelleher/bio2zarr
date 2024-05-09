@@ -1,4 +1,4 @@
-name: Build Docs
+name: Docs
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-docs:
-    name: Docs
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
@@ -29,6 +29,11 @@ jobs:
         run: |
           pip install --upgrade pip wheel
           pip install -r docs/requirements.txt
+          python3 -m bash_kernel.install
+
+      - name: Install package
+        run: |
+          python3 -m pip install .
 
       - name: Build Docs
         run: |
