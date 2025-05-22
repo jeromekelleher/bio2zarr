@@ -23,6 +23,8 @@ dependencies = [
   # cyvcf2 also pulls in coloredlogs and click
   "coloredlogs",
   "click",
+  # Using pandas for reading plink files, but will be useful more generally
+  "plink"
 ]
 requires-python = ">=3.10"
 classifiers = [
@@ -68,11 +70,9 @@ dev = [
 ]
 # TODO Using dev version of tskit for CI, FIXME before release
 tskit = ["tskit @ git+https://github.com/tskit-dev/tskit.git@main#subdirectory=python"]
-plink = ["bed_reader"]
 vcf = ["cyvcf2"]
 all = [
   "tskit @ git+https://github.com/tskit-dev/tskit.git@main#subdirectory=python", 
-  "bed_reader", 
   "cyvcf2"
   ]
 
